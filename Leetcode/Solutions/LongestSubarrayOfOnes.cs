@@ -13,7 +13,6 @@ namespace Leetcode.Solutions
             int left = 0, z_cnt = 0, max = 0, result = 0;
             for (int right = 0; right < nums.Length; right++)
             {
-                //z_cnt += nums[right] == 0 ? 1 : 0;
                 if (nums[right] == 0)
                 {
                     z_cnt++;
