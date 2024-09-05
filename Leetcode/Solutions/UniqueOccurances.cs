@@ -1,20 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection.Metadata.Ecma335;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Leetcode.Solutions
+﻿namespace Leetcode.Solutions
 {
     public class UniqueOccurances
     {
         public bool UniqueOccurrences(int[] arr)
         {
+            // https://leetcode.com/problems/unique-number-of-occurrences/description/
             // loop through list
-            Dictionary<int,int> pairs = new Dictionary<int,int>();
+            Dictionary<int, int> pairs = new Dictionary<int, int>();
             int curr_value;
-            foreach(int num in arr)
+            foreach (int num in arr)
             {
                 if (pairs.ContainsKey(num))
                 {
@@ -28,7 +22,7 @@ namespace Leetcode.Solutions
             }
             int[] values = pairs.Values.ToArray();
             Array.Sort(values);
-            if(values.Distinct().Count() != values.Length )
+            if (values.Distinct().Count() != values.Length)
             {
                 return false;
             }

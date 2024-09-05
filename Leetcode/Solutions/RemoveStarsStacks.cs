@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Leetcode.Solutions
+﻿namespace Leetcode.Solutions
 {
     internal class RemoveStarsStacks
     {
+        // https://leetcode.com/problems/removing-stars-from-a-string/description/
         public string RemoveStars(string s)
         {
             Stack<char> str = new(s.Length);

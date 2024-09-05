@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Leetcode.Solutions
+﻿namespace Leetcode.Solutions
 {
+    // two loops to check temp for each value
     internal class DailyTempStack
     {
         public int[] DailyTemperatures(int[] temperatures)

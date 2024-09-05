@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Leetcode.Solutions
+﻿namespace Leetcode.Solutions
 {
     internal class BinaryTree
     {
@@ -20,6 +14,8 @@ namespace Leetcode.Solutions
                 this.right = right;
             }
         }
+
+        // Root Left Right
         public IList<int> PreorderTraversal(TreeNode root)
         {
             List<int> res = new List<int>();
@@ -28,6 +24,7 @@ namespace Leetcode.Solutions
                 return res;
             }
 
+            // if Node value is not null, add node's val
             void f(TreeNode node)
             {
                 if (node == null)
@@ -35,13 +32,18 @@ namespace Leetcode.Solutions
                     return;
                 }
                 res.Add(node.val);
+
+                // recursion of function over left side
                 f(node.left);
+                // recursion of function over left side
                 f(node.right);
             }
             f(root);
             return res;
         }
 
+
+        // Left Root Right
         public IList<int> InorderTraversal(TreeNode root)
         {
             List<int> result = new List<int>();
@@ -68,9 +70,11 @@ namespace Leetcode.Solutions
             }
             return result;
         }
+
+        // Left Right Root
         public IList<int> PostorderTraversal(TreeNode root)
         {
-            if(root == null)
+            if (root == null)
             {
                 return new List<int>();
             }
@@ -78,12 +82,12 @@ namespace Leetcode.Solutions
                 nodes = new Stack<TreeNode>();
 
             rootNodes.Push(root);
-            while(rootNodes.Count != 0)
+            while (rootNodes.Count != 0)
             {
                 TreeNode currNode = rootNodes.Pop();
                 nodes.Push(currNode);
 
-                if(currNode.left != null)
+                if (currNode.left != null)
                 {
                     rootNodes.Push(currNode.left);
                 }
@@ -93,7 +97,7 @@ namespace Leetcode.Solutions
                 }
             }
             IList<int> result = new List<int>();
-            while(nodes.Count != 0)
+            while (nodes.Count != 0)
             {
                 result.Add(nodes.Pop().val);
             }

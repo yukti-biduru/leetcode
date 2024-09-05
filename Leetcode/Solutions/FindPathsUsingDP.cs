@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Leetcode.Solutions
+﻿namespace Leetcode.Solutions
 {
     internal class FindPathsUsingDP
     {
+        // https://leetcode.com/problems/out-of-boundary-paths/description/
         public int FindPaths(int m, int n, int maxMove, int startRow, int startColumn)
         {
             // initialize an array m*n that will contain the number of paths for each point in the grid
@@ -55,3 +50,14 @@ namespace Leetcode.Solutions
         }
     }
 }
+
+// create dp array 
+// initialize Dp array 
+// return for top case
+
+// exhaust all base cases  
+// recursion if needed (usually needed in top down approach)
+// might not be needed in bottom up approach 
+
+// save value gotten 
+// return value gotten
