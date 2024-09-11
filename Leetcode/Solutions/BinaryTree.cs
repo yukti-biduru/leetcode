@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design.Serialization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,6 +21,7 @@ namespace Leetcode.Solutions
                 this.right = right;
             }
         }
+        // root, left, right
         public IList<int> PreorderTraversal(TreeNode root)
         {
             List<int> res = new List<int>();
@@ -42,6 +44,7 @@ namespace Leetcode.Solutions
             return res;
         }
 
+        // Traverse the left tree first, root then the right tree
         public IList<int> InorderTraversal(TreeNode root)
         {
             List<int> result = new List<int>();
@@ -57,7 +60,6 @@ namespace Leetcode.Solutions
                     currNode = currNode.left;
                 }
 
-
                 // for each left node print the node and its right child
                 if (nodes.Count != 0)
                 {
@@ -68,9 +70,38 @@ namespace Leetcode.Solutions
             }
             return result;
         }
+        // Traverse the left tree first and then the right then the root 
+        public IList<int> PostorderTraversal1(TreeNode root)
+        {
+            if (root == null)
+                return new List<int>();
+            Stack<TreeNode> rootNodes = new Stack<TreeNode>(), nodes = new Stack<TreeNode>();
+            rootNodes.Push(root);
+            while (rootNodes.Count != 0)
+            {
+                TreeNode curr = rootNodes.Pop();
+                nodes.Push(curr);
+
+                if (curr.left != null)
+                {
+                    rootNodes.Push(curr.left);
+                }
+                if (curr.right != null)
+                {
+                    rootNodes.Push(curr.right);
+                }
+            }
+            IList<int> res = new List<int>();
+            while (nodes.Count !=0)
+            {
+                res.Add(nodes.Pop().val);
+            }
+
+            return res;
+        }
         public IList<int> PostorderTraversal(TreeNode root)
         {
-            if(root == null)
+            if (root == null)
             {
                 return new List<int>();
             }
@@ -78,12 +109,12 @@ namespace Leetcode.Solutions
                 nodes = new Stack<TreeNode>();
 
             rootNodes.Push(root);
-            while(rootNodes.Count != 0)
+            while (rootNodes.Count != 0)
             {
                 TreeNode currNode = rootNodes.Pop();
                 nodes.Push(currNode);
 
-                if(currNode.left != null)
+                if (currNode.left != null)
                 {
                     rootNodes.Push(currNode.left);
                 }
@@ -93,7 +124,7 @@ namespace Leetcode.Solutions
                 }
             }
             IList<int> result = new List<int>();
-            while(nodes.Count != 0)
+            while (nodes.Count != 0)
             {
                 result.Add(nodes.Pop().val);
             }

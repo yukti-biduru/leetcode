@@ -67,6 +67,22 @@ namespace Leetcode.Solutions
             odd.next = evenhead.next;
             return oddhead.next;
         }
+        public ListNode MiddleNode(ListNode head)
+        {
+            if(head == null || head.next == null)
+            {
+                return null;
+            }
+            ListNode slow, fast;
+            slow = head;
+            fast = head.next; 
+            while(fast != null && fast.next != null)
+            {
+                slow = slow.next;
+                fast = fast.next.next;
+            }
+            return slow;
+        }
         public ListNode DeleteMiddle(ListNode head)
         {
             if (head == null || head.next == null)
