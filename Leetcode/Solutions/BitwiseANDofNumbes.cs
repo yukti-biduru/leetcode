@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Leetcode.Solutions
+﻿namespace Leetcode.Solutions
 {
     internal class BitwiseANDofNumbers
     {
+        // it just works. IDK how.
         public int RangeBitwiseAnd(int left, int right)
         {
             var count = 0;

@@ -1,17 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Leetcode.Solutions
+﻿namespace Leetcode.Solutions
 {
     internal class KInversePairsDP
     {
         public int KInversePairs(int n, int k)
         {
+            // initialize dp array
             int[,] dp = new int[n + 1, k + 1];
             int temp;
+
+            // take care of the base cases 
             if (n == 0)
             {
                 return 0;
@@ -20,6 +17,8 @@ namespace Leetcode.Solutions
             {
                 return 1;
             }
+
+
             for (int i = 1; i <= n; i++)
             {
                 dp[i, 0] = 1;

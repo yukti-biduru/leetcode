@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data;
 
 namespace Leetcode.Solutions
 {
     internal class ReversePolishNotation
     {
+        // https://leetcode.com/problems/evaluate-reverse-polish-notation/description/
         public int EvalRPN1(string[] tokens)
         {
             Stack<string> stk = new(tokens.Length);

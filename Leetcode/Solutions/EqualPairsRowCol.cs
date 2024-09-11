@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Leetcode.Solutions
+﻿namespace Leetcode.Solutions
 {
     internal class EqualPairsRowCol
     {
+        // https://leetcode.com/problems/equal-row-and-column-pairs/description/
         public int EqualPairs(int[][] grid)
         {
             int n = grid.Length;

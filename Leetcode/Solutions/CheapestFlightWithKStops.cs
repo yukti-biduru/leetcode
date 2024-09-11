@@ -1,22 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Leetcode.Solutions
+﻿namespace Leetcode.Solutions
 {
     internal class CheapestFlightWithKStops
     {
         public int FindCheapestPrice(int n, int[][] flights, int src, int dst, int k)
         {
+            // create array dp for saving values
             int[] dp = new int[n];
+            // initialize said array with max int value 
             Array.Fill(dp, int.MaxValue);
+            // initialize source to zero
             dp[src] = 0;
 
             for (int i = 0; i <= k; i++)
             {
                 int[] temp = (int[])dp.Clone();
+                // 
                 foreach (int[] flight in flights)
                 {
                     if (dp[flight[0]] != int.MaxValue)
@@ -26,7 +24,7 @@ namespace Leetcode.Solutions
                 }
                 dp = temp;
             }
-            return dp[dst] == int.MaxValue ? -1: dp[dst];
+            return dp[dst] == int.MaxValue ? -1 : dp[dst];
         }
     }
 }

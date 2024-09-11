@@ -21,7 +21,8 @@ namespace Leetcode.Solutions
                 this.right = right;
             }
         }
-        // root, left, right
+
+        // Root Left Right
         public IList<int> PreorderTraversal(TreeNode root)
         {
             List<int> res = new List<int>();
@@ -30,6 +31,7 @@ namespace Leetcode.Solutions
                 return res;
             }
 
+            // if Node value is not null, add node's val
             void f(TreeNode node)
             {
                 if (node == null)
@@ -37,14 +39,18 @@ namespace Leetcode.Solutions
                     return;
                 }
                 res.Add(node.val);
+
+                // recursion of function over left side
                 f(node.left);
+                // recursion of function over left side
                 f(node.right);
             }
             f(root);
             return res;
         }
 
-        // Traverse the left tree first, root then the right tree
+
+        // Left Root Right
         public IList<int> InorderTraversal(TreeNode root)
         {
             List<int> result = new List<int>();

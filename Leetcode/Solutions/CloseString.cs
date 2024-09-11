@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Leetcode.Solutions
+﻿namespace Leetcode.Solutions
 {
     internal class CloseString
     {
-
+        // if we have all same letters and same word length, we are good to return true. All combinations can be possible as
+        // long as length and letters are the same.
         public bool CloseStrings(string word1, string word2)
         {
             Dictionary<char, int> word1set = new Dictionary<char, int>();

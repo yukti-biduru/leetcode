@@ -1,29 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Leetcode.Solutions
+﻿namespace Leetcode.Solutions
 {
     internal class RearrageArrayBySign
     {
+        // https://leetcode.com/problems/rearrange-array-elements-by-sign/description/
         public int[] RearrangeArray(int[] nums)
         {
             Queue<int> pos = new Queue<int>();
             Queue<int> neg = new Queue<int>();
-            foreach(int i in nums)
+            foreach (int i in nums)
             {
-                if(i<0)
+                if (i < 0)
                 {
                     neg.Enqueue(i);
                 }
                 else { pos.Enqueue(i); }
             }
             Queue<int> output = new Queue<int>();
-            while(pos.Count > 0 || neg.Count > 0)
+            while (pos.Count > 0 || neg.Count > 0)
             {
-                if(pos.Count == 0)
+                if (pos.Count == 0)
                 {
                     output.Enqueue(neg.Dequeue());
                 }
